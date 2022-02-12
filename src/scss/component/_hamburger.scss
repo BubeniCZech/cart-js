@@ -1,0 +1,74 @@
+.hamburger {
+  @include flex-center;
+  display: none;
+  width: $size;
+  height: $size;
+  overflow: hidden;
+  border-left: $border-dark;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+
+  &__icon {
+    position: relative;
+    width: 30px;
+    height: 20px;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+
+    span {
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $accent;
+      transform: rotate(0deg);
+      opacity: 1;
+      transition: 0.25s ease-in-out;
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 10px;
+      }
+
+      &:nth-child(3) {
+        top: 20px;
+      }
+    }
+  }
+
+  &.active {
+    background-color: lighten($tuatara, 10%);
+
+    .hamburger__icon {
+      span {
+        &:nth-child(1) {
+          top: 10px;
+          transform: rotate(135deg);
+        }
+
+        &:nth-child(2) {
+          left: -60px; /* change 60px right animation */
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          top: 10px;
+          transform: rotate(-135deg);
+        }
+      }
+    }
+  }
+
+  &:hover {
+    background-color: lighten($tuatara, 10%);
+  }
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+  }
+}

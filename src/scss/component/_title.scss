@@ -1,0 +1,39 @@
+.style-01 {
+  position: relative;
+  color: $text-light;
+  font-size: rem(50);
+  font-family: $primary-font;
+  -webkit-text-stroke: 0.01rem rgba($black, 1);
+  line-height: 1.2;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  text-transform: uppercase;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    color: rgba($accent, 1);
+    border-right: 2px solid $accent;
+    animation: text 10s linear infinite;
+    content: attr(data-text);
+    -webkit-text-stroke: 0 rgba($tuatara, 1);
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: rem(30);
+  }
+}
+
+@keyframes text {
+  0% {
+    width: 0;
+  }
+
+  70% {
+    width: 100%;
+  }
+}

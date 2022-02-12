@@ -1,0 +1,27 @@
+.login {
+  @include flex-center;
+  flex: 0 0 $size;
+
+  .login-btn {
+    height: $size;
+    border-left: $border-dark;
+    cursor: pointer;
+    transition: background-color 0.3s ease-out;
+
+    &__desc {
+      margin: 0 rem(20);
+      color: $accent;
+      font-size: rem(12);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    &:hover {
+      background-color: lighten($tuatara, 10%);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}

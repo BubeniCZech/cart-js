@@ -1,0 +1,43 @@
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: 1s all;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: $tuatara;
+  font-weight: 500;
+  font-size: 30px;
+  background-color: $text-light;
+  background-image: url('../assets/patern/patern.png');
+
+  &::after {
+    display: inline-block;
+    width: 0;
+    margin-top: 0;
+    overflow: hidden;
+    vertical-align: bottom;
+    animation: dots steps(4, end) 2s infinite;
+    content: '\2026';
+  }
+}
+
+.preloader__done {
+  visibility: hidden;
+  opacity: 1;
+}
+
+@keyframes dots {
+  to {
+    width: 30px;
+  }
+}

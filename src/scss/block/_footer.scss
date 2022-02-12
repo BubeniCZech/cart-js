@@ -1,0 +1,16 @@
+.footer__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $size;
+  letter-spacing: 1px;
+  background-color: $tuatara;
+  border: $border-dark;
+  border-top-left-radius: $border-radius-box;
+  border-top-right-radius: $border-radius-box;
+  box-shadow: $box-dark-shadow;
+
+  p {
+    font-size: rem(14);
+  }
+}

@@ -1,0 +1,54 @@
+.modal-btn {
+  @include button-reset;
+}
+
+.modals-overlay {
+  @include flex-center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($black, 0.7);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal {
+  @include flex-center;
+  position: relative;
+  display: none;
+  width: 1024px;
+  padding: rem(15);
+  color: $tuatara;
+  background-color: $text-light;
+
+  &-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+    width: 25px;
+    height: 25px;
+    background-image: url('@img/icons/mono/close.svg');
+    cursor: pointer;
+  }
+
+  &.animate {
+    animation: animatezoom 0.6s;
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}

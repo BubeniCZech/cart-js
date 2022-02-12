@@ -1,0 +1,12 @@
+.header {
+  &__container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: $size;
+    color: $text-light;
+    background-color: $tuatara;
+    border: $border-dark;
+    box-shadow: $box-dark-shadow;
+  }
+}

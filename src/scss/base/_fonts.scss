@@ -1,0 +1,36 @@
+// ? font-weight helper:
+// ! 100 Tint
+// ! 200 Extra light
+// ! 300 Light
+// ! 400 Regular
+// ! 500 Medium
+// ! 700 Bold
+// ! 900 Black
+
+// ? font-display helper:
+// ! auto
+// ! block
+// ! swap
+// ! fallback
+// ! optional
+
+@mixin font($f-name, $f-style, $f-weight, $f-url, $f-swap) {
+  @font-face {
+    font-weight: $f-weight;
+    font-family: $f-name;
+    font-style: $f-style;
+    font-display: $f-swap;
+    src: url($f-url) format('woff2');
+  }
+}
+
+@include font('Montserrat', normal, 100, '../assets/fonts/Montserrat-Thin.woff2', swap);
+@include font('Montserrat', italic, 100, '../assets/fonts/Montserrat-ThinItalic.woff2', swap);
+@include font('Montserrat', normal, 300, '../assets/fonts/Montserrat-Light.woff2', swap);
+@include font('Montserrat', italic, 300, '../assets/fonts/Montserrat-LightItalic.woff2', swap);
+@include font('Montserrat', normal, 400, '../assets/fonts/Montserrat-Regular.woff2', swap);
+@include font('Montserrat', italic, 400, '../assets/fonts/Montserrat-Italic.woff2', swap);
+@include font('Montserrat', normal, 500, '../assets/fonts/Montserrat-Medium.woff2', swap);
+@include font('Montserrat', italic, 500, '../assets/fonts/Montserrat-Medium.woff2', swap);
+@include font('Montserrat', normal, 700, '../assets/fonts/Montserrat-Bold.woff2', swap);
+@include font('Montserrat', italic, 700, '../assets/fonts/Montserrat-BoldItalic.woff2', swap);

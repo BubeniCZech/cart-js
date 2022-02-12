@@ -1,0 +1,45 @@
+.social {
+  display: flex;
+  flex: 0 0 200px;
+  height: 50px;
+  overflow: hidden;
+  background-color: $tuatara;
+  border-right: $border-dark;
+  border-bottom: $border-dark;
+  border-left: $border-dark;
+  border-bottom-right-radius: $border-radius-box;
+  border-bottom-left-radius: $border-radius-box;
+  box-shadow: $box-dark-shadow;
+
+  &__item {
+    @include flex-center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+
+    &-icon {
+      width: 18px;
+      height: 18px;
+      filter: drop-shadow(0 0 2px rgba($black, 1));
+      fill: $accent;
+    }
+
+    &:not(:last-child) {
+      border-right: $border-dark;
+    }
+
+    &:hover {
+      background-color: lighten($tuatara, 10%);
+      transition: background-color 0.25s ease-in-out;
+
+      .social-icon {
+        transition: all 0.25s ease-in-out;
+        fill: $text-light;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}

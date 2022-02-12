@@ -1,0 +1,36 @@
+.cart {
+  @include flex-center;
+  position: relative;
+  flex: 0 0 $size;
+  height: $size;
+  overflow: hidden;
+  border-left: $border-dark;
+
+  .cart-btn {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+
+    &__counter {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: $accent;
+      font-size: rem(12);
+    }
+
+    &__icon {
+      &-svg {
+        width: 18px;
+        height: 18px;
+        fill: $accent;
+      }
+    }
+  }
+
+  &:hover {
+    .cart-btn {
+      background-color: lighten($tuatara, 10%);
+    }
+  }
+}

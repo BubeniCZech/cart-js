@@ -1,0 +1,11 @@
+.logo {
+  display: flex;
+  flex: 1 0 0;
+  margin-left: rem(20);
+
+  span {
+    color: $accent;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}

@@ -2,6 +2,21 @@ import { hamburger } from './modules/hamburger.js';
 import { toggleModals } from './modules/modals.js';
 import { preloader } from './modules/preloader.js';
 
+function toggleCartStatus() {
+  // console.log('cart status');
+  const cartCards = document.querySelector('.cart__cards');
+  // console.log(cartCards.children.length);
+  const cartEmpty = document.querySelector('[data-cart-empty]');
+
+  if (cartCards.children.length) {
+    console.log('FULL');
+    cartEmpty.classList.add('hide');
+  } else {
+    console.log('EMPTY');
+    cartEmpty.classList.remove('hide');
+  }
+}
+
 function toggleCounter() {
   // const counter = document.querySelector('[data-counter]');
   // const counterMinus = document.querySelector('[data-action-counter="minus"]');
@@ -18,27 +33,29 @@ function toggleCounter() {
 
     if (event.target.dataset.actionCounter === 'plus' || event.target.dataset.actionCounter === 'minus') {
       const cardCounter = event.target.closest('.counter-wrapper');
-      console.log(cardCounter);
+      // console.log(cardCounter);
       counter = cardCounter.querySelector('[data-counter]');
-      console.log(counter);
+      // console.log(counter);
     }
 
     if (event.target.dataset.actionCounter === 'plus') {
-      console.log('PLUS');
+      // console.log('PLUS');
       // eslint-disable-next-line no-plusplus
       counter.innerText = ++counter.innerText;
     }
 
     if (event.target.dataset.actionCounter === 'minus') {
-      console.log('MINUS');
+      // console.log('MINUS');
+
       if (parseInt(counter.innerText, 10) > 1) {
         // eslint-disable-next-line no-plusplus
         counter.innerText = --counter.innerText;
-      }
-
-      if (event.target.closest('.cart__cards') && parseInt(counter.innerText, 10) === 1) {
+      } else if (event.target.closest('.cart__cards') && parseInt(counter.innerText, 10) === 1) {
         console.log('IN CART!!!');
         event.target.closest('.card-item').remove();
+
+        // Statu kosiku plny / prazdny
+        toggleCartStatus();
       }
     }
   });
@@ -50,7 +67,7 @@ function renderCard() {
   window.addEventListener('click', (event) => {
     if (event.target.hasAttribute('data-add-cart')) {
       const card = event.target.closest('.card');
-      console.log(card);
+      // console.log(card);
 
       const productInfo = {
         id: card.dataset.id,
@@ -65,7 +82,7 @@ function renderCard() {
       console.log(productInfo);
 
       const itemInCart = cartCards.querySelector(`[data-id="${productInfo.id}"]`);
-      console.log(itemInCart);
+      // console.log(itemInCart);
 
       if (itemInCart) {
         const counterElement = itemInCart.querySelector('[data-counter]');
@@ -98,6 +115,9 @@ function renderCard() {
       }
 
       card.querySelector('[data-counter]').innerText = '1';
+
+      // Statu kosiku plny / prazdny
+      toggleCartStatus();
     }
   });
 }
@@ -105,5 +125,6 @@ function renderCard() {
 // preloader();
 hamburger();
 toggleModals();
+toggleCartStatus();
 renderCard();
 toggleCounter();

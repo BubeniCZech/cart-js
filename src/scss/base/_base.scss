@@ -26,6 +26,7 @@ body {
   line-height: 1;
   background-color: $text-light;
   background-image: url('../assets/patern/patern.png');
+  user-select: none;
 }
 
 .img-responsive {

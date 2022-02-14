@@ -1,4 +1,4 @@
-export function toggleModals() {
+export default function toggleModals() {
   const modalBtn = document.querySelectorAll('.modal-btn');
   const modalOverlay = document.querySelector('.modals-overlay');
   const modals = document.querySelectorAll('.modal');
@@ -6,9 +6,7 @@ export function toggleModals() {
 
   modalBtn.forEach((btn) => {
     btn.addEventListener('click', (event) => {
-      // console.log(event.target);
       const path = event.currentTarget.getAttribute('data-path');
-      // console.log(path);
 
       modals.forEach((modal) => {
         modal.style.display = '';
@@ -35,7 +33,6 @@ export function toggleModals() {
 
   modalCloseBtns.forEach((btn) => {
     btn.addEventListener('click', (event) => {
-      // console.log(event.target);
       if (event.target === btn) {
         modalOverlay.style.opacity = '';
         modalOverlay.style.visibility = '';

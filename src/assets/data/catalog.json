@@ -1,5 +1,36 @@
-[
-  {
-    "color": "blue"
-  }
-]
+{
+  "goods": [
+    {
+      "id": 1,
+      "name": "Margherita",
+      "size": "Ø 40cm",
+      "weight": 850,
+      "price": 170,
+      "imgSrc": "images/bg/bg-1.webp"
+    },
+    {
+      "id": 2,
+      "name": "Veggie",
+      "size": "Ø 40cm",
+      "weight": 850,
+      "price": 200,
+      "imgSrc": "images/bg/bg-2.webp"
+    },
+    {
+      "id": 3,
+      "name": "Mexicana",
+      "size": "Ø 40cm",
+      "weight": 850,
+      "price": 220,
+      "imgSrc": "images/bg/bg-3.webp"
+    },
+    {
+      "id": 4,
+      "name": "Chorizo Rucola",
+      "size": "Ø 40cm",
+      "weight": 850,
+      "price": 240,
+      "imgSrc": "images/bg/bg-4.webp"
+    }
+  ]
+}

@@ -5,3 +5,5 @@ export const hamburger = () => {
     iconMenu.classList.toggle('active');
   });
 };
+
+export default hamburger;
